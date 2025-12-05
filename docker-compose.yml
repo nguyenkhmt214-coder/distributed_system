@@ -155,7 +155,7 @@ services:
   # 3) SPARK CLUSTER — 1 MASTER + 2 WORKERS
   # ================================================================
   spark-master:
-    build: ./docker/spark   # thêm mấy lib vào để chạy job spark
+    build: ./docker/spark
     container_name: spark-master
     command: >
       bash -c "/opt/spark/sbin/start-master.sh && tail -f /dev/null"

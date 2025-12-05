@@ -60,3 +60,97 @@
 [2025-12-05T19:28:22.195+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
 [2025-12-05T19:33:22.458+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
 [2025-12-05T19:33:22.459+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T19:38:22.619+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T19:38:22.619+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T19:41:05.153+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-12-05T19:41:05.153+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-12-05T19:41:05.154+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-05T19:41:05.154+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T19:41:05.155+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T19:46:05.213+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T19:46:05.213+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T19:51:05.252+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T19:51:05.253+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T19:56:05.528+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T19:56:05.529+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:01:05.703+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:01:05.704+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:06:05.863+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:06:05.863+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:11:06.021+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:11:06.021+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:16:35.645+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-12-05T20:16:35.645+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-12-05T20:16:35.646+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-05T20:16:35.646+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:16:35.647+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:21:35.823+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:21:35.823+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:24:19.511+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-12-05T20:24:19.516+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-12-05T20:24:19.516+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-05T20:24:19.516+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:24:19.517+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:24:24.533+0000] {manager.py:833} ERROR - Error removing old import errors
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/dag_processing/manager.py", line 829, in _refresh_dag_dir
+    DagFileProcessorManager.clear_nonexistent_import_errors(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/dag_processing/manager.py", line 899, in clear_nonexistent_import_errors
+    session.execute(query.execution_options(synchronize_session="fetch"))
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
+[SQL: DELETE FROM import_error]
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-12-05T20:29:20.144+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:29:20.145+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:31:31.779+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-12-05T20:31:31.779+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-12-05T20:31:31.779+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-05T20:31:31.780+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:31:31.781+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:34:36.843+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-12-05T20:34:36.844+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-12-05T20:34:36.844+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-05T20:34:36.845+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:34:36.845+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:38:30.137+0000] {manager.py:483} INFO - Processing files using up to 1 processes at a time 
+[2025-12-05T20:38:30.148+0000] {manager.py:484} INFO - Process each file at most once every 30 seconds
+[2025-12-05T20:38:30.151+0000] {manager.py:485} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-05T20:38:30.152+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:38:30.153+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:43:30.439+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:43:30.439+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:48:30.588+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:48:30.589+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags
+[2025-12-05T20:53:30.987+0000] {manager.py:821} INFO - Searching for files in /opt/airflow/dags
+[2025-12-05T20:53:30.987+0000] {manager.py:824} INFO - There are 0 files in /opt/airflow/dags

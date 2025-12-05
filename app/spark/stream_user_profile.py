@@ -47,6 +47,7 @@ spark = (
     .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false")
     .getOrCreate()
 )
+print("[INIT] Spark session is ready")
 
 spark.sparkContext.setLogLevel("WARN")
 
