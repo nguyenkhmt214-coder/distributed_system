@@ -30,6 +30,7 @@ DUCKDB_PATH = "/opt/workspace/app/duckdb/user_profile.duckdb"
 CHECKPOINT_RAW = f"s3a://{MINIO_BUCKET}/checkpoints/user_profile_raw/"
 RAW_OUTPUT_PATH = f"s3a://{MINIO_BUCKET}/user_profile_raw/"
 
+
 CHECKPOINT_DUCK = f"s3a://{MINIO_BUCKET}/checkpoints/user_profile_duckdb/"
 
 
